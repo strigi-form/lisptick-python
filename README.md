@@ -1,2 +1,2 @@
 # lisptick-python
-LispTIck Python client library and examples 
+LispTick Python client library and examples 
