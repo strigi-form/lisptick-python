@@ -9,11 +9,11 @@ def main():
     conn = lisptick.Socket(HOST, PORT)
     request = """(timeserie @"t" "meteonet" "86027001" 2017-07-06)"""
     # call show_value for each value one by one, as soon as it arrives
-    conn.walk_result(request, show_value)
+    conn.walk_result(request, print_value)
 
-def show_value(_, __, value):
+def print_value(_, __, value):
     """reader and uid are useless as result is a single timeserie"""
-    print(value.time, value.i)
+    print(value)
 
 if __name__ == "__main__":
     main()

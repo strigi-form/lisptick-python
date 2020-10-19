@@ -97,7 +97,7 @@ class Point():
         self.i = init_value
 
     def __str__(self):
-        return str(self.__class__) + ": " + str(self.__dict__)
+        return str(self.time) + " " + str(self.i)
 
     def __len__(self):
         return 2
