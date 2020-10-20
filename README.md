@@ -56,7 +56,7 @@ Meteorlogical date from Météo France.
   Simple small temperature timeserie.  
   Streamed result is read point by point minimizing memory usage.
 
-* **temprature_max.py**
+* **temperature_max.py**
 
   A little bit more elaborated requests with symbol definition and Kelvin to Celsius convertion.
   Stream maximum temperature in Celsius at Poitiers from 1st Jan 2016 to 31th Dec 2018.
