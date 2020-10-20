@@ -1,7 +1,7 @@
 """Get result example for a timeserie"""
 import lisptick
 
-HOST = "lisptick.org"
+HOST = "uat.lisptick.org"
 PORT = 12006
 
 def main():

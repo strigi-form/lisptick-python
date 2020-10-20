@@ -7,7 +7,7 @@ import datetime
 import re
 import lisptick
 
-HOST = "lisptick.org"
+HOST = "uat.lisptick.org"
 PORT = 12006
 
 
@@ -25,12 +25,16 @@ class ClientTest(unittest.TestCase):
 
     def test_float(self):
         """Test Float"""
+        self.assertEqual(test_get("""(- 310.85 273.15)"""), 37.7)
         self.assertEqual(test_get("""(+ 3.04 0.1)"""), 3.14)
         self.assertEqual(test_get("""(/ 10 4)"""), 2.5)
 
     def test_dec64(self):
         """Test Dec64 as Float"""
         self.assertEqual(test_get("""2.5"""), 2.5)
+        self.assertEqual(test_get("""0.0000025"""), 0.0000025)
+        self.assertEqual(test_get("""2.5"""), 2.5)
+        self.assertEqual(test_get("""-0.0000025"""), -0.0000025)
 
     def test_time_duration(self):
         """Test time & duration"""

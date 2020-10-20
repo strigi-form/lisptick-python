@@ -168,6 +168,10 @@ class Socket():
         if err_msg != "":
             raise LispTickException(err_msg)
 
+#dec64 float factor
+factors = [1.0]*129
+for e in range (0, 128):
+    factors[e] = pow(10.0, e)
 
 class ReaderContext():
     """internaly used by get_result to read full result"""
@@ -446,8 +450,12 @@ class LisptickReader():
         return Sentinel(struct.unpack('<q', self._fix_size_recv(8))[0])
 
     def _get_dec64(self):
-        """Int64 LittleEndian, Dec64 special encoding"""
-        return struct.unpack('<q', self._fix_size_recv(8))[0]
+        """Dec64 special encoding see https://www.crockford.com/dec64.html"""
+        d64 = struct.unpack('<q', self._fix_size_recv(8))[0]
+        if (d64 % 256) > 127:
+            return (d64 >> 8) / factors[256 - (d64 % 256)]
+        else:
+            return (d64 >> 8) * factors[d64 % 256]
 
     def _get_float(self):
         """Float64 LittleEndian"""
