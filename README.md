@@ -32,7 +32,7 @@ def main():
     request = """(timeserie @"t" "meteonet" "86027001" 2017-07-06)"""
     timeserie = conn.get_result(request)
     for point in timeserie:
-        print(point.time, point.i)
+        print(point)
 
 if __name__ == "__main__":
     main()
@@ -44,7 +44,7 @@ Directories with examples for different data sources.
 
 ### MeteoNet
 
-Meteorlogical date from Météo France.
+Meteorological data from Météo France.
 
 * **oneday.py**
 
