@@ -60,3 +60,14 @@ Meteorological data from Météo France.
 
   A little bit more elaborated requests with symbol definition and Kelvin to Celsius convertion.
   Stream maximum temperature in Celsius at Poitiers from 1st Jan 2016 to 31th Dec 2018.
+
+### Bitstamp
+
+Bitstamp is a cryptocurrency market place allowing bitcoin trading.  
+We use it as an example of live flow computation with LispTick.
+
+* **liquidity.py**
+
+  Live simple liquidity indicators, like bid ask spread and mininum available volume at first limit.  
+  Shows how to request several live timeseries in one request and how to handle them.
+  
